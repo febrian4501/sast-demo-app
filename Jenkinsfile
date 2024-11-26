@@ -7,11 +7,6 @@ pipeline {
        git url: 'https://github.com/febrian4501/sast-demo-app.git', branch:'main'
      }
    }
-   stage('Install Dependencies') {
-     steps {
-       sh 'apt install python3-bandit'
-     }
-   }
    stage('SAST Analysis') {
      steps {
        sh 'bandit -f xml -o bandit-output.xml -r . || true'
