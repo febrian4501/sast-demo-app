@@ -9,7 +9,7 @@ pipeline {
    }
    stage('Install Dependencies') {
      steps {
-       sh 'apt install python3-bandit'
+       sh 'sudo apt install python3-bandit'
      }
    }
    stage('SAST Analysis') {
